@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { inputOutputComponent } from './input-output/input-output.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'First Platzi';
+  votacion = '';
+
+  votos = [
+    { title: 'opcion 1' },
+    { title: 'opcion 2' },
+    { title: 'opcion 3' },
+    { title: 'opcion 4' }
+  ]
+
+  addVoto(response: string) {
+    this.votacion = "usted eligio: " + response;
+  }
 }
