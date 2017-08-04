@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { TicketService } from './services/ticket.service'
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,21 @@ export class AppComponent {
   votacion = '';
   tickets: any;
 
-  constructor(private ticketService: TicketService) {
+  myForm: FormGroup;
+
+  constructor(
+    private ticketService: TicketService,
+    private fb: FormBuilder
+  ) {
     this.tickets = ticketService.getTicket();
+
+    this.myForm = fb.group({
+      'name': ['wilmer david'],
+      'apellido': ['mancera calderon'],
+      'celular': ['312456987'],
+    });
+
+    // this.myForm = fb.group()
   }
 
   votos = [
@@ -30,10 +44,15 @@ export class AppComponent {
   cantidad = 5;
   factor = 1;
 
-  resultado ="";
-
+  resultado = "";
   onSubmit(form: any): void {
     this.resultado = JSON.stringify(form);
+    // console.log("El formulario tiene", form);
+  }
+
+  resultadoReactiveForm = "";
+  onSubmitReactiveForm(value: string): void {
+    this.resultadoReactiveForm = JSON.stringify(value);
     // console.log("El formulario tiene", form);
   }
 }

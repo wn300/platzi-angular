@@ -48,24 +48,46 @@
   </div>
 
   <h2 title>
-    5. Form
+    5. Form Basic
   </h2>
   <form #f='ngForm' (ngSubmit)="onSubmit(f.value)">
     <div>
       <label for="nameInput">Nombre</label>
       <input type="text" id="nameInput" placeholder="Nombre" name="nombre" ngModel/>
     </div>
-     <div>
+    <div>
       <label for="apellidoInput">Apellido</label>
       <input type="text" id="apellidoInput" placeholder="Apellido" name="apellido" ngModel/>
     </div>
-     <div>
+    <div>
       <label for="celulaInput">Celular</label>
       <input type="text" id="celulaInput" placeholder="Celular" name="celular" ngModel/>
     </div>
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Submit" />
     <div>
       <textarea [(ngModel)]="resultado" [ngModelOptions]="{standalone: true}" disabled></textarea>
+    </div>
+  </form>
+
+  <h2 title>
+    6. Reactive Forms
+  </h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForm(myForm.value)">
+    <div>
+      <label for="nameInput">Nombre</label>
+      <input type="text" id="nameInput" placeholder="Nombre" name="nombre" [formControl]="myForm.controls['name']" />
+    </div>
+    <div>
+      <label for="apellidoInput">Apellido</label>
+      <input type="text" id="apellidoInput" placeholder="Apellido" name="apellido" [formControl]="myForm.controls['apellido']"/>
+    </div>
+    <div>
+      <label for="celulaInput">Celular</label>
+      <input type="text" id="celulaInput" placeholder="Celular" name="celular" [formControl]="myForm.controls['celular']"/>
+    </div>
+    <input type="submit" value="Submit" />
+    <div>
+      <textarea [(ngModel)]="resultadoReactiveForm" [ngModelOptions]="{standalone: true}"  disabled></textarea>
     </div>
   </form>
 </div>
