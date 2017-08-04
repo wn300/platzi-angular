@@ -46,4 +46,26 @@
       </li>
     </ul>
   </div>
+
+  <h2 title>
+    5. Form
+  </h2>
+  <form #f='ngForm' (ngSubmit)="onSubmit(f.value)">
+    <div>
+      <label for="nameInput">Nombre</label>
+      <input type="text" id="nameInput" placeholder="Nombre" name="nombre" ngModel/>
+    </div>
+     <div>
+      <label for="apellidoInput">Apellido</label>
+      <input type="text" id="apellidoInput" placeholder="Apellido" name="apellido" ngModel/>
+    </div>
+     <div>
+      <label for="celulaInput">Celular</label>
+      <input type="text" id="celulaInput" placeholder="Celular" name="celular" ngModel/>
+    </div>
+    <input type="submit" value="Submit"/>
+    <div>
+      <textarea [(ngModel)]="resultado" [ngModelOptions]="{standalone: true}" disabled></textarea>
+    </div>
+  </form>
 </div>

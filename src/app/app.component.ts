@@ -29,4 +29,11 @@ export class AppComponent {
 
   cantidad = 5;
   factor = 1;
+
+  resultado ="";
+
+  onSubmit(form: any): void {
+    this.resultado = JSON.stringify(form);
+    // console.log("El formulario tiene", form);
+  }
 }
