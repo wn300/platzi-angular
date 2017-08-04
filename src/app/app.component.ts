@@ -22,7 +22,7 @@ export class AppComponent {
     this.tickets = ticketService.getTicket();
 
     this.myForm = fb.group({
-      'name': ['wilmer david'],
+      'nombre': ['wilmer david'],
       'apellido': ['mancera calderon'],
       'celular': ['312456987'],
     });
