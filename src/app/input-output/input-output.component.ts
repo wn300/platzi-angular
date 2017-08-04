@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
     templateUrl: 'input-output.component.html',
     styleUrls: ['input-output.component.css'],
 })
-export class inputOutputComponent{
+export class InputOutputComponent{
     @Input() voto:string;
 
     @Output() addVoto = new EventEmitter<string>();

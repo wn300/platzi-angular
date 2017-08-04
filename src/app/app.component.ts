@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { inputOutputComponent } from './input-output/input-output.component';
+import { InputOutputComponent } from './input-output/input-output.component';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +20,7 @@ export class AppComponent {
   addVoto(response: string) {
     this.votacion = "usted eligio: " + response;
   }
+
+  cantidad = 5;
+  factor = 1;
 }
